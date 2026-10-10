@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-espresso: #2C1810;
+    --color-roast: #4A2C1B;
+    --color-caramel: #C68B59;
+    --color-caramel-light: #DEB887;
+    --color-cream: #FDFBF7;
+    --color-cream-dark: #F5EFEB;
+    --color-sage: #7B8F77;
+    --color-sage-light: #E8EDE6;
+    --color-border: #EADBCE;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #2C1810;
+    background-color: #FAF7F2;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+  }
+}
+
+/* Custom coffee steam animation */
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translateY(-8px) scaleX(1.15) rotate(1deg);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(-18px) scaleX(0.9) rotate(-1deg);
+    opacity: 0.7;
+  }
+  75% {
+    transform: translateY(-30px) scaleX(1.2) rotate(2deg);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateY(-45px) scaleX(1.4) rotate(-2deg);
+    opacity: 0;
+  }
+}
+
+.animate-steam-1 {
+  animation: steam 3.5s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steam 4.2s ease-out 1.2s infinite;
+}
+
+.animate-steam-3 {
+  animation: steam 3.8s ease-out 0.6s infinite;
+}
+
+/* Floating bean animation */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(6deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(14px) rotate(-8deg);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C68B59;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4A2C1B;
+}
